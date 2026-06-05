@@ -1,0 +1,44 @@
+package cmd
+
+import (
+	"path/filepath"
+	"testing"
+
+	"github.com/agentspan-ai/agentspan/cli/config"
+)
+
+// newTempHome points HOME at a temp dir so config reads/writes are isolated.
+func newTempHome(t *testing.T) string {
+	t.Helper()
+	dir := t.TempDir()
+	t.Setenv("HOME", dir)
+	t.Setenv("USERPROFILE", dir)
+	if vol := filepath.VolumeName(dir); vol != "" {
+		t.Setenv("HOMEDRIVE", vol)
+		t.Setenv("HOMEPATH", dir[len(vol):])
+	}
+	t.Setenv("AGENTSPAN_SERVER_URL", "")
+	t.Setenv("AGENT_SERVER_URL", "")
+	t.Setenv("AGENTSPAN_API_KEY", "")
+	return dir
+}
+
+// saveTestConfig saves a config pointing at the given server URL with a test token.
+func saveTestConfig(t *testing.T, serverURL string) *config.Config {
+	t.Helper()
+	cfg := config.DefaultConfig()
+	cfg.ServerURL = serverURL
+	cfg.APIKey = "test-token"
+	if err := config.Save(cfg); err != nil {
+		t.Fatalf("saveTestConfig: %v", err)
+	}
+	return cfg
+}
+
+// newTestConfig returns a config pointing at the given server URL without writing to disk.
+func newTestConfig(t *testing.T, serverURL string) *config.Config {
+	t.Helper()
+	cfg := config.DefaultConfig()
+	cfg.ServerURL = serverURL
+	return cfg
+}

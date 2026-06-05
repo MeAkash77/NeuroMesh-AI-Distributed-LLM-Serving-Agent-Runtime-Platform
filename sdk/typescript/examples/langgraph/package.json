@@ -1,0 +1,8 @@
+{
+  "name": "agentspan-examples-langgraph",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
+}
