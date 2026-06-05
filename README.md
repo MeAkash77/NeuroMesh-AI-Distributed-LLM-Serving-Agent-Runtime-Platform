@@ -31,14 +31,14 @@
 
 ---
 
-> ⭐ If you find NeuroMesh useful, [give us a star](https://github.com/agentspan-ai/agentspan) — it helps others find the project!
+> ⭐ If you find Agentspan useful, [give us a star](https://github.com/agentspan-ai/agentspan) — it helps others find the project!
 
 ---
 
 https://github.com/user-attachments/assets/dd4b720d-d11c-42e8-93a6-875c5a740fd8
 
 
-**NeuroMesh** is a distributed, durable runtime for AI agents that survive crashes, scale across machines, and pause for human approval for days — not minutes.
+**Agentspan** is a distributed, durable runtime for AI agents that survive crashes, scale across machines, and pause for human approval for days — not minutes.
 
 ## Quickstart (60 seconds)
 
