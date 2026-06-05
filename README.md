@@ -707,7 +707,7 @@ We're building Agentspan in the open and would love your help.
 ### Contributing
 
 ```bash
-git clone https://github.com/agentspan-ai/agentspan.git
+git clone https://github.com/MeAkash77/NeuroMesh-AI-Distributed-LLM-Serving-Agent-Runtime-Platform.git
 cd agentspan/sdk/python
 uv venv && source .venv/bin/activate
 uv pip install -e ".[dev]"
